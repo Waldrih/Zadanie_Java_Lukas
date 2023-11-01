@@ -1,2 +1,3 @@
 # Zadanie_Java_Lukas
-Zadanie do wglądu dla Łukasza
+
+Plik będzie edytowany w miare potrzeb.
