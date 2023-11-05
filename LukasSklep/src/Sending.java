@@ -26,17 +26,38 @@ public class Sending {
     }
 
     public void realization(){
-        checkingDelivery(this.order);
         System.out.println("Podsumowanie zlecenia nr " + this.order.getId() + " dla " + this.client.name );
+        checkingDelivery(this.order);
+
     }
 
     public void checkingDelivery(Order order){
         switch (getOrder().getFormOfDelivery()){
-            case POST -> System.out.println("wysyłka pocztonm");
-            case COURIER -> System.out.println("wysyłka kurier");
-            case INPOST -> System.out.println("wysyłka pczkomat");
+            case POST -> {
+              for(Product product : getOrder().getProductList()){
+                  if (product.name.contains("sofa") || product.name.contains("stół")){
+                      System.out.println("Zbyt duży gabaryt. Wysyłka " + product.name + " nie możliwa.");
+                      break;
+                  }
+                  else{
+                      System.out.println("Wysyłka poczta");
+                  }
+              }
+            }
+            case COURIER -> System.out.println("Wysyłka kurier");
+            case INPOST ->  {
+                for(Product product : getOrder().getProductList()){
+                    if (product.name.contains("sofa")){
+                        System.out.println("Zbyt duży gabaryt. Wysyłka " + product.name + " nie możliwa.");
+                        break;
+                    }
+                    else{
+                        System.out.println("Wysyłka InPost");
+                    }
+                }
+            }
             default -> System.out.println("Błąd wysyłki");
         }
-
     }
+
 }

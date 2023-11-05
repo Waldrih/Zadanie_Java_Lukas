@@ -21,9 +21,11 @@ public class Main {
         lista1.add(stol1);
         lista1.add(stol2);
 
-        Order zamowienie1 = new Order(1111, "05.11.2023", lista1, FormOfDelivery.COURIER, PaymentMethod.CASH);
+        Order zamowienie1 = new Order(1111, "05.11.2023", lista1, FormOfDelivery.POST, PaymentMethod.CASH);
 
         Sending wysylka1 = new Sending(zamowienie1, klientRobert);
         wysylka1.realization();
+
+        //System.out.println(lista1);
     }
 }
