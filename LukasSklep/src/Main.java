@@ -26,6 +26,6 @@ public class Main {
         Sending wysylka1 = new Sending(zamowienie1, klientRobert);
         wysylka1.realization();
 
-        //System.out.println(lista1);
+        System.out.println(lista1);
     }
 }

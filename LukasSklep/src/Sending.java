@@ -26,9 +26,9 @@ public class Sending {
     }
 
     public void realization(){
-        System.out.println("Podsumowanie zlecenia nr " + this.order.getId() + " dla " + this.client.name );
+        System.out.println("Podsumowanie zlecenia nr " + this.order.getId() + " dla " + this.client.name );;
         checkingDelivery(this.order);
-
+        shippingCost(this.order);
     }
 
     public void checkingDelivery(Order order){
@@ -58,6 +58,13 @@ public class Sending {
             }
             default -> System.out.println("Błąd wysyłki");
         }
+    }
+
+    public void shippingCost(Order order){
+        double priceMultipler = order.getFormOfDelivery().getPriceMultiplier();
+        int productAmount = order.getProductList().size();
+        double price = priceMultipler * productAmount;
+        System.out.println("Koszt wysyłki: " + price);
     }
 
 }
