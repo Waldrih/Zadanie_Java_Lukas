@@ -7,6 +7,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Rozpoczęcie zadanie Lukas");
 
+        Client klientRobert = new Client("Robert D.","Kraków", "robert.mail.com");
+
         Product sofa1 = new Product("sofa IKEA", "01.01.2021", 100, "Wygodna sofa");
         Product sofa2 = new Product("sofa BRW", "02.02.2022", 200);
         Product stol1 = new Product("stół STOLARZ","11.11.2011",11,"Stary stół");
