@@ -1,5 +1,4 @@
 public class Sending {
-    //brak pomysłów na chwilę obecną, zastanowić się
 
     Order order;
     Client client;
@@ -29,6 +28,7 @@ public class Sending {
         System.out.println("Podsumowanie zlecenia nr " + this.order.getId() + " dla " + this.client.name );;
         checkingDelivery(this.order);
         shippingCost(this.order);
+        deliverytime(this.order);
     }
 
     public void checkingDelivery(Order order){
@@ -65,6 +65,11 @@ public class Sending {
         int productAmount = order.getProductList().size();
         double price = priceMultipler * productAmount;
         System.out.println("Koszt wysyłki: " + price);
+    }
+
+    public void deliverytime(Order order){
+        int deliveryTime = order.getFormOfDelivery().getDeliveryTimeInDays();
+        System.out.println("Przewidywany czas dostawy to " + deliveryTime + " dni");
     }
 
 }
